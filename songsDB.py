@@ -26,6 +26,7 @@ def songDB():
     videoPafy = pafy.new(link)
     best = videoPafy.getbestvideo()
     videompv = best.url
+    #connect to database
     clientID = 'YammatFM'
     songDB = NowOnAir
     youtubeLinkDB = videompv
