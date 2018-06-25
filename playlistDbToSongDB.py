@@ -12,3 +12,11 @@ cursor.execute("""INSERT INTO test (songName, youtubeLink, clientID, date) SELEC
                ON DUPLICATE KEY UPDATE date = VALUES(date), youtubeLink = VALUES(youtubeLink), verifiedLink = 1""")
 
 conn.commit()
+
+
+#CREATE TRIGGER `after_update_A` AFTER UPDATE ON `playlists` FOR EACH ROW
+BEGIN
+    UPDATE TABLE test
+	SET youtubeLink = new.YoutubeLink
+	WHERE youtubeLink = new.youtubeLink;
+END $$
