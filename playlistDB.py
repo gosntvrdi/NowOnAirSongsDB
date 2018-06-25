@@ -8,6 +8,8 @@ import datetime
 import os
 import glob
 
+#playlist gets inserted into playlistDB everytime user exports Jazler playlist to FTP/playlists
+
 #set working dir
 dirname = os.path.dirname(__file__)
 file = os.path.join(dirname, 'playlists/*')

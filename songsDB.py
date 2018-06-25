@@ -8,6 +8,7 @@ import datetime
 import pyinotify
 import os
 
+#song gets inserted to songsDB every time Jazler sends NowOnAir.txt to FTP/NowOnAir
 
 dirname = os.path.dirname(__file__)
 file = os.path.join(dirname, 'NowOnAir/NowOnAir.txt')
