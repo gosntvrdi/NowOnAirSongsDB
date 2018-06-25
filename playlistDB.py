@@ -47,7 +47,7 @@ while i < len(latestPlaylistSongs):
     conn = mariadb.connect(host='192.168.150.251', user='videostream', database='songsDB')
     cursor = conn.cursor()
     cursor.execute("""INSERT INTO playlists (songName, youtubeLink, clientID, date, playlistName) VALUES (%s, %s, %s, %s, %s)""",
-                   (songDB, youtubeLinkDB, clientID, timestamp, playlistName)
+                   (songDB, youtubeLinkDB, clientID, timestamp, playlistName))
     conn.commit()
     i += 1
 
