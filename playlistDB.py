@@ -14,7 +14,7 @@ import pyinotify
 def playlistDB():
     #set working dir
     dirname = os.path.dirname(__file__)
-    file = os.path.join(dirname, '/share/Storage/04-PUBLIC/09-PLAYLISTS/*')
+    file = os.path.join(dirname, '/playlists/*')
 
     #get latest playlist.txt in dir
     playlists = glob.glob(file)
@@ -59,10 +59,11 @@ def playlistDB():
 
 class ModHandler(pyinotify.ProcessEvent):
     def process_IN_CLOSE_WRITE(self, evt):
-        songDB()
+        print('New playlist detected.')
+        playlistDB()
 
 
-file = ('//share/Storage/04-PUBLIC/09-PLAYLISTS/testlist.txt')
+file = ('/playlists/testlist.txt')
 handler = ModHandler()
 wm = pyinotify.WatchManager()
 notifier = pyinotify.Notifier(wm, handler)
