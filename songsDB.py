@@ -11,7 +11,7 @@ import os
 #song gets inserted to songsDB every time Jazler sends NowOnAir.txt to FTP/NowOnAir
 
 dirname = os.path.dirname(__file__)
-file = os.path.join(dirname, '//share/Storage/04-PUBLIC/05-NOW-PLAYING/NowOnAir.txt')
+file = os.path.join(dirname, '//share/Storage/04-PUBLIC/05-NOW_PLAYING/NowOnAir.txt')
 
 
 def songDB():
